@@ -1,0 +1,6 @@
+{
+  "name": "Naveed Games - Premium Gaming Store",
+  "description": "Naveed Games Peshawar - Ultra-premium gaming consoles, accessories, 3D interactive showroom, and e-commerce shopping with WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
