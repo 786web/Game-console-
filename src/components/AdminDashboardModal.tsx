@@ -578,6 +578,9 @@ export const AdminDashboardModal: React.FC = () => {
                       <div className="flex items-center gap-3">
                         <img
                           src={p.image}
+                          onError={(e) => {
+                            e.currentTarget.src = '/images/product_ps5_pro_console.jpg';
+                          }}
                           alt={p.name}
                           className="w-12 h-12 rounded-lg object-cover bg-slate-950"
                           referrerPolicy="no-referrer"

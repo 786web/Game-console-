@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, MessageCircle, Shield, Truck, Award, Zap, ShoppingBag, Eye, Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { STORE_INFO } from '../data/initialData';
 import { useShop } from '../context/ShopContext';
+import { IMAGES } from '../assets/images';
 
 interface HeroSectionProps {
   onExploreClick: () => void;
@@ -16,7 +17,7 @@ const HERO_FEATURED_ITEMS = [
     category: 'PlayStation Consoles',
     price: 245000,
     originalPrice: 265000,
-    image: '/src/assets/images/hero_ps5_pro_controller_1794052339186.jpg',
+    image: IMAGES.heroPs5,
     tag: 'FLAGSHIP PS5 PRO BUNDLE',
     badge: 'SAVE RS. 20,000',
     rating: 4.98,
@@ -29,7 +30,7 @@ const HERO_FEATURED_ITEMS = [
     category: 'Gaming Controllers',
     price: 76000,
     originalPrice: 82000,
-    image: '/src/assets/images/product_gaming_controller_1794052340754.jpg',
+    image: IMAGES.controller,
     tag: 'TOURNAMENT PRO CONTROLLER',
     badge: 'ESPORTS READY',
     rating: 4.96,
@@ -42,7 +43,7 @@ const HERO_FEATURED_ITEMS = [
     category: 'Gaming Headsets',
     price: 34500,
     originalPrice: 39000,
-    image: '/src/assets/images/product_gaming_headset_1794052340215.jpg',
+    image: IMAGES.headset,
     tag: 'AUDIOPHILE GAMING AUDIO',
     badge: 'HI-RES CERTIFIED',
     rating: 4.88,
@@ -55,7 +56,7 @@ const HERO_FEATURED_ITEMS = [
     category: 'PlayStation Consoles',
     price: 175000,
     originalPrice: 185000,
-    image: '/src/assets/images/product_ps5_pro_console_1794052339639.jpg',
+    image: IMAGES.ps5Pro,
     tag: 'OFFICIAL SONY PAKISTAN STOCK',
     badge: 'BEST SELLER',
     rating: 4.92,
@@ -189,6 +190,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onDeal
               <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full my-4 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800/80">
                 <img
                   src={activeItem.image}
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/hero_ps5_pro_controller.jpg';
+                  }}
                   alt={activeItem.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
@@ -292,7 +296,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onDeal
                           : 'border-slate-800 opacity-60 hover:opacity-100 hover:border-slate-700'
                       }`}
                     >
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover rounded-lg" />
+                      <img
+                        src={item.image}
+                        onError={(e) => {
+                          e.currentTarget.src = '/images/hero_ps5_pro_controller.jpg';
+                        }}
+                        alt={item.title}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
                     </button>
                   ))}
                 </div>

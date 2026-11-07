@@ -31,6 +31,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950/80">
         <img
           src={product.image}
+          onError={(e) => {
+            e.currentTarget.src = '/images/product_ps5_pro_console.jpg';
+          }}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           referrerPolicy="no-referrer"

@@ -109,6 +109,9 @@ export const CartDrawer: React.FC = () => {
                 >
                   <img
                     src={item.product.image}
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/product_ps5_pro_console.jpg';
+                    }}
                     alt={item.product.name}
                     className="w-18 h-18 rounded-lg object-cover bg-slate-950 shrink-0"
                     referrerPolicy="no-referrer"

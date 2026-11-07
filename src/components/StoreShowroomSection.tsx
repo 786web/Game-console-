@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, ShieldCheck, Wrench, Gamepad2, Navigation, MessageCircle } from 'lucide-react';
 import { STORE_INFO } from '../data/initialData';
+import { IMAGES } from '../assets/images';
 
 export const StoreShowroomSection: React.FC = () => {
   return (
@@ -27,7 +28,10 @@ export const StoreShowroomSection: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
             <div className="relative aspect-[16/9] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
               <img
-                src="/src/assets/images/store_naveed_games_showroom_1794052340781.jpg"
+                src={IMAGES.showroom}
+                onError={(e) => {
+                  e.currentTarget.src = '/images/store_naveed_games_showroom.jpg';
+                }}
                 alt="Naveed Games Showroom Peshawar"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

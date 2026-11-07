@@ -1,4 +1,5 @@
 import { Product, Order, DiscountCode, CustomerReview } from '../types';
+import { IMAGES } from '../assets/images';
 
 export const STORE_INFO = {
   name: 'Naveed Games',
@@ -49,10 +50,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: true,
     featured: true,
-    image: '/src/assets/images/product_ps5_pro_console_1794052339639.jpg',
+    image: IMAGES.ps5Pro,
     secondaryImages: [
-      '/src/assets/images/hero_ps5_pro_controller_1794052339186.jpg',
-      '/src/assets/images/store_naveed_games_showroom_1794052340781.jpg',
+      IMAGES.heroPs5,
+      IMAGES.showroom,
     ],
     description: 'The pinnacle of console gaming. PlayStation Spectral Super Resolution (PSSR) AI upscaling, 2TB high-speed NVMe SSD, enhanced ray tracing compute units, and seamless backward compatibility with thousands of PS4/PS5 titles. Verified Pakistani official stock with Naveed Games store warranty.',
     specs: {
@@ -83,7 +84,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: true,
     featured: true,
-    image: '/src/assets/images/hero_ps5_pro_controller_1794052339186.jpg',
+    image: IMAGES.heroPs5,
     description: 'Ultra-customizable pro gaming controller built for competitive tournaments. Replaceable stick modules, remappable back paddles, adjustable trigger stops, braided USB cable with lockable housing, and premium haptic feedback.',
     specs: {
       'Connectivity': 'Bluetooth 5.1 & Low Latency USB-C Wired',
@@ -112,7 +113,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: false,
     featured: true,
-    image: '/src/assets/images/product_gaming_headset_1794052340215.jpg',
+    image: IMAGES.headset,
     description: 'Audiophile-grade 50mm planar magnetic drivers delivering pinpoint positional audio for FPS titles like Call of Duty Warzone, Valorant, and CS2. Dual 2.4GHz ultra-low latency wireless + Bluetooth 5.3 with broadcast-grade noise-cancelling boom mic.',
     specs: {
       'Transducer': '50mm Planar Magnetic Drivers',
@@ -141,7 +142,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: false,
     featured: true,
-    image: '/src/assets/images/product_gaming_controller_1794052340754.jpg',
+    image: IMAGES.controller,
     description: 'Engineered for esports dominance. Features four ergonomic rear paddles embedded directly into the grip, instantaneous mechanical mouse-click triggers, and high-performance non-slip rubber grip handles.',
     specs: {
       'Rear Paddles': '4 Integrated Ergonomic Remappable Paddles',
@@ -169,7 +170,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: false,
     isBestSeller: true,
     featured: false,
-    image: '/src/assets/images/product_ps5_pro_console_1794052339639.jpg',
+    image: IMAGES.ps5Pro,
     description: 'Slimmer, lighter, and packed with 1TB of lightning-fast solid-state storage. Includes Ultra HD Blu-ray disc drive for physical games and 4K movies. Authentic boxed stock with Pakistani power plug adapter.',
     specs: {
       'Storage': '1TB Custom High-Speed SSD (825GB usable)',
@@ -197,7 +198,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: false,
     isBestSeller: true,
     featured: false,
-    image: '/src/assets/images/store_naveed_games_showroom_1794052340781.jpg',
+    image: IMAGES.showroom,
     description: 'The fastest, most powerful Xbox ever. 12 teraflops of raw graphic processing power, DirectX Raytracing, Quick Resume across multiple games simultaneously, and native 4K gaming at up to 120FPS.',
     specs: {
       'Processing Power': '12 TFLOPS, 52 CUs @ 1.825 GHz Custom RDNA 2 GPU',
@@ -225,7 +226,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: false,
     isBestSeller: true,
     featured: false,
-    image: '/src/assets/images/hero_ps5_pro_controller_1794052339186.jpg',
+    image: IMAGES.heroPs5,
     description: 'Featuring a vibrant 7-inch OLED screen with deep blacks and vivid colors. Wide adjustable kickstand for tabletop gaming, wired LAN port dock, 64GB internal storage, and enhanced audio speakers.',
     specs: {
       'Display': '7.0 inch Multi-Touch OLED Screen (1280x720 Handheld / 1080p Docked)',
@@ -252,7 +253,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: false,
     featured: true,
-    image: '/src/assets/images/store_naveed_games_showroom_1794052340781.jpg',
+    image: IMAGES.showroom,
     description: 'Realistic dual-motor force feedback with helical gears for quiet, smooth steering. Hand-stitched leather wheel rim, 900-degree lock-to-lock rotation, and responsive nonlinear stainless steel brake pedal.',
     specs: {
       'Rotation': '900 degrees lock-to-lock (2.5 turns)',
@@ -279,7 +280,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: false,
     featured: false,
-    image: '/src/assets/images/product_gaming_headset_1794052340215.jpg',
+    image: IMAGES.headset,
     description: 'Breakthrough mixed reality headset powered by Snapdragon XR2 Gen 2. Full-color 4K+ Infinite Display passthrough, slim pancake lenses, Touch Plus haptic controllers, and spatial 3D audio.',
     specs: {
       'Processor': 'Qualcomm Snapdragon XR2 Gen 2',
@@ -307,7 +308,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: false,
     isBestSeller: true,
     featured: false,
-    image: '/src/assets/images/product_gaming_controller_1794052340754.jpg',
+    image: IMAGES.controller,
     description: 'Iconic reimagined gaming mouse with LIGHTFORCE hybrid optical-mechanical switches, HERO 25K sub-micron sensor, 8-LED LIGHTSYNC RGB lighting, and up to 130 hours of continuous battery life.',
     specs: {
       'Sensor': 'HERO 25K Sensor (100 – 25,600 DPI, Zero smoothing/accel)',
@@ -335,7 +336,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: false,
     isBestSeller: false,
     featured: false,
-    image: '/src/assets/images/product_gaming_controller_1794052340754.jpg',
+    image: IMAGES.controller,
     description: 'Competitive esports keyboard featuring Gen-2 Analog Optical Switches with Rapid Trigger mode. Adjustable actuation from 0.1mm to 4.0mm, textured doubleshot PBT keycaps, and aircraft-grade aluminum top plate.',
     specs: {
       'Switches': 'Razer Analog Optical Gen-2 with Rapid Trigger',
@@ -363,7 +364,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     isTrending: true,
     isBestSeller: false,
     featured: false,
-    image: '/src/assets/images/store_naveed_games_showroom_1794052340781.jpg',
+    image: IMAGES.showroom,
     description: 'Award-winning ergonomic gaming throne. Proprietary NEO Hybrid Leatherette, 4-way L-ADAPT Lumbar Support System, magnetic memory foam head pillow with cooling gel, and 4D full-metal armrests.',
     specs: {
       'Upholstery': 'Secretlab NEO Hybrid Leatherette (12x more durable)',

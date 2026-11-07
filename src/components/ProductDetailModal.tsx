@@ -120,6 +120,9 @@ export const ProductDetailModal: React.FC = () => {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 relative">
                 <img
                   src={allImages[activeImageIndex] || detailProduct.image}
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/product_ps5_pro_console.jpg';
+                  }}
                   alt={detailProduct.name}
                   className="w-full h-full object-cover transition-transform duration-300"
                   referrerPolicy="no-referrer"

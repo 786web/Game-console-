@@ -125,6 +125,9 @@ export const DealsBanner: React.FC = () => {
               <div className="aspect-[4/3] rounded-xl overflow-hidden bg-slate-900 relative mb-4">
                 <img
                   src={dealProduct.image}
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/product_ps5_pro_console.jpg';
+                  }}
                   alt={dealProduct.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"

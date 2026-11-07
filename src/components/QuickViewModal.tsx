@@ -49,6 +49,9 @@ export const QuickViewModal: React.FC = () => {
           <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 relative">
             <img
               src={quickViewProduct.image}
+              onError={(e) => {
+                e.currentTarget.src = '/images/product_ps5_pro_console.jpg';
+              }}
               alt={quickViewProduct.name}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

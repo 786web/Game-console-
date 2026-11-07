@@ -73,11 +73,26 @@ interface ShopContextType {
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // LocalStorage initialization
+  // LocalStorage initialization with image path sanitization
   const [products, setProducts] = useState<Product[]>(() => {
     try {
       const saved = localStorage.getItem('ng_products');
-      return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
+      if (!saved) return INITIAL_PRODUCTS;
+      const parsed: Product[] = JSON.parse(saved);
+      return parsed.map((p) => {
+        const initMatch = INITIAL_PRODUCTS.find((ip) => ip.id === p.id);
+        if (initMatch) {
+          return {
+            ...p,
+            image: initMatch.image,
+            secondaryImages: initMatch.secondaryImages || p.secondaryImages,
+          };
+        }
+        if (p.image?.startsWith('/src/assets/images/')) {
+          return { ...p, image: '/images/product_ps5_pro_console.jpg' };
+        }
+        return p;
+      });
     } catch {
       return INITIAL_PRODUCTS;
     }
@@ -86,7 +101,18 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('ng_cart');
-      return saved ? JSON.parse(saved) : [];
+      if (!saved) return [];
+      const parsed: CartItem[] = JSON.parse(saved);
+      return parsed.map((item) => {
+        const initMatch = INITIAL_PRODUCTS.find((ip) => ip.id === item.product.id);
+        if (initMatch) {
+          return {
+            ...item,
+            product: { ...item.product, image: initMatch.image },
+          };
+        }
+        return item;
+      });
     } catch {
       return [];
     }
